@@ -27,7 +27,7 @@ create table [Таблица 4](
 [Регион] nvarchar(100),
 [Клиент] nvarchar(100),
 [Адрес] nvarchar(200),
-[Сумма продаж] int
+[Сумма продаж] float
 )
 
 create table [Таблица 5](
@@ -36,5 +36,5 @@ create table [Таблица 5](
 [Продукт] nvarchar(100),
 [Год] int,
 [Месяц] nvarchar(100),
-[Сумма продаж] int
+[Сумма продаж] float
 )
