@@ -11,7 +11,6 @@ DATABASE_NAME = 'Excel'
 
 excel_file = 'Example.xlsx'
 
-#Строка подключения к бд
 connection_string = f"""
     DRIVER={{SQL Server}};
     SERVER={SERVER_NAME};
@@ -145,7 +144,7 @@ d.to_sql('Таблица 4', enigne, if_exists='replace', index=False,
          dtype={'Регион': sqlalchemy.types.NVARCHAR(length=100),
                 'Клиент': sqlalchemy.types.NVARCHAR(length=100),
                 'Адрес': sqlalchemy.types.NVARCHAR(length=200),
-                'Сумма продаж': sqlalchemy.types.Integer()})
+                'Сумма продаж': sqlalchemy.types.Float()})
 
 d = excel_file['Таблица 2']
 
@@ -155,7 +154,7 @@ d.to_sql('Таблица 5', enigne, if_exists='replace', index=False,
                 'Продукт': sqlalchemy.types.NVARCHAR(length=100),
                 'Год': sqlalchemy.types.Integer(),
                 'Месяц': sqlalchemy.types.NVARCHAR(length=100),
-                'Сумма продаж': sqlalchemy.types.Integer()})
+                'Сумма продаж': sqlalchemy.types.Float()})
 
 #Задание:В табл. 1 в столбец D проставить суммы продаж за Июль 2011 года по рыбе
 #Реализация SQL запроса
@@ -185,3 +184,4 @@ with pd.ExcelWriter('Output2.xlsx', mode='a', if_sheet_exists='replace') as writ
 
 #Закрыть подключение к базе данных
 connection_to_db.close()
+
