@@ -11,6 +11,7 @@ DATABASE_NAME = 'Excel'
 
 excel_file = 'Example.xlsx'
 
+#Строка подключения к бд
 connection_string = f"""
     DRIVER={{SQL Server}};
     SERVER={SERVER_NAME};
